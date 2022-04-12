@@ -1,0 +1,134 @@
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+
+#import customer.graphql
+
+type Query{
+  products(customer_id:Int!, sku: String @eq search: String @eq pageSize:Int @eq currentPage: Int @eq): Products!
+  relatedProducts(customer_id:Int!, category: String @eq brand: String @eq parent: String @eq  pageSize:Int @eq currentPage: Int @eq): Products!
+  searchTopProducts(keyword: String! type: Int!, customer_id: Int!): searchTopProducts!
+  searchByArguement(keyword: String! type: Int!, customer_id: Int!): searchByArguement!
+  searchByCompany(keyword: String! type: Int!, customer_id: Int!): searchByCompany!
+}
+
+type searchByCompany{
+  details:detailsData
+  code:Int,
+  comment: String,
+  type:Int
+ 
+}
+
+type detailsData {
+  best_matches:[best_matches]
+  non_best_matches:[non_best_matches]
+}
+
+type searchByArguement{
+  details:[responseData!]
+  code:Int,
+  comment: String,
+  type:Int
+ 
+}
+
+type responseData {
+  value: String
+  type: String
+  score: String
+  product_count: Int
+  serial: Int
+  primary_id: Int
+  countofproduct:Int
+}
+
+
+type searchTopProducts {
+  best_matches: [best_matches]
+  non_best_matches: [non_best_matches]
+
+}
+type best_matches{
+  value: String
+  type: String
+  category: String
+  score: String
+  upc_count: Int
+  serial: Int
+  primary_id: Int
+}
+type non_best_matches{
+  value: String
+  type: String
+  category: String
+  score: String
+  upc_count: Int
+  serial: Int
+  primary_id: Int
+}
+
+
+type Products {
+  search:String!
+  sku: String!
+  total_count: String
+  items: [ProductItems!]!
+  page_info: PageInformation!
+}
+
+type PageInformation {
+  current_page:Int!
+  page_size:Int!
+}
+
+type ProductItems {
+  product_id: ID!
+  name: String! @rename(attribute: "product_desc")
+  sku: String! @rename(attribute: "upc_code")
+  price_range: Prices!
+  description: Description!
+  image: ImageData!
+  categories: [CategoriesData]!
+  brand: Branddata!
+  parent: ParentData!
+  score:Float
+
+}
+
+type ParentData {
+  parent: String  @rename(attribute: "parent_name")
+  parentid: String @rename(attribute: "parent_name")
+}
+type Branddata{
+  brand: String @rename(attribute: "brand_name")
+  brandid: String @rename(attribute: "brand_id")
+}
+type CategoriesData{
+  uid: String
+  level: String
+  name: String
+  id: ID
+}
+type ImageData {
+  label: String
+  url: String
+}
+type Description {
+  html: String!
+}
+type Prices {
+  minimum_price:RegularPrice!
+}
+
+type RegularPrice{
+ regular_price:finalpriceValue!
+}
+type finalpriceValue{
+  value: String!
+  currency:String!
+}
+
