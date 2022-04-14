@@ -45,3 +45,11 @@ Route::group(['middleware' => ['auth']], function () {
  Route::get('customeredit/{id}', '\App\Http\Controllers\CustomerController@customeredit');
  Route::get('customerdelete/{id}', '\App\Http\Controllers\CustomerController@customerdelete');
  
+
+ 
+
+ Route::get('products', '\App\Http\Controllers\ProductsController@index');
+ Route::get('productadd', '\App\Http\Controllers\ProductsController@productadd');
+ Route::post('saveproduct', '\App\Http\Controllers\ProductsController@saveproduct');
+ Route::get('productedit/{id}', '\App\Http\Controllers\ProductsController@productedit');
+ Route::get('productdelete/{id}', '\App\Http\Controllers\ProductsController@productdelete');

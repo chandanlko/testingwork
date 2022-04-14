@@ -178,6 +178,15 @@
               </p>
             </a>
           </li>
+
+           <li class="nav-item">
+            <a href="/products" class="nav-link">
+               <i class="nav-icon far fa-user"></i>
+              <p>
+               Products
+              </p>
+            </a>
+          </li>
           
          
           <li class="nav-item">

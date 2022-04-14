@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -25,9 +26,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function productadd()
     {
-        //
+        $category=Category::where('status',1)->where('parent_id',0)->get();
+        $title="Add New Product";
+        return view('admin.productform',['title'=>$title,'category'=>$category]);
     }
 
     /**
