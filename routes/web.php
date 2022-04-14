@@ -33,3 +33,15 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
  Route::get('categories', '\App\Http\Controllers\CategoryController@index');
+ Route::get('categoryadd', '\App\Http\Controllers\CategoryController@categoryadd');
+ Route::post('savecategory', '\App\Http\Controllers\CategoryController@savecategory');
+ Route::get('categoryedit/{id}', '\App\Http\Controllers\CategoryController@categoryedit');
+ Route::get('categorydelete/{id}', '\App\Http\Controllers\CategoryController@categorydelete');
+ 
+
+ Route::get('customers', '\App\Http\Controllers\CustomerController@index');
+ Route::get('customeradd', '\App\Http\Controllers\CustomerController@customeradd');
+ Route::post('savecustomer', '\App\Http\Controllers\CustomerController@savecustomer');
+ Route::get('customeredit/{id}', '\App\Http\Controllers\CustomerController@customeredit');
+ Route::get('customerdelete/{id}', '\App\Http\Controllers\CustomerController@customerdelete');
+ 
