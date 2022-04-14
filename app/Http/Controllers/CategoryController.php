@@ -15,6 +15,10 @@ class CategoryController extends Controller
     public function index()
     {
         $data=Category::get();
+        foreach( $data as $key=>$value){
+            $parentname=Category::select('name')->where('id',$value->parent_id)->first();
+            $data[$key]['parentname']= !empty($parentname->name)?$parentname->name:"";
+        }
         return view('admin.categoriesList',['cat'=>$data]);
     }
 

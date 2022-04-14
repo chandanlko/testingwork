@@ -46,10 +46,27 @@
                 <thead>
                     <tr>  
                         <th>Name</th>
+                        <th>Parent Category</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                   <tbody>
+                    @if($cat)
+                    @foreach($cat as $key=>$values)
+                    <tr>
+                      <td>
+                        {{$values->name}}
+                      </td>
+                      <td>
+                        {{$values->parentname}} 
+                      </td>
+                      <td>
+                        <a class="btn btn-success" href=""><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a>
+                      </td>
+                    </tr>
+                    @endforeach
+                    @endif
                   </tbody>
                   
                 </table>
