@@ -39,9 +39,15 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function getsubcategory(Request $request)
     {
-        //
+        $data=Category::where('parent_id',$request->parent_id)->get();
+        $html='<option value=0>Select Sub Category</option>';
+        foreach($data as $key=>$value){
+            $html.='<option value="'.$value->id.'">'.$value->name.'</option>';
+        }
+        return $html;
+
     }
 
     /**

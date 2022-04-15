@@ -66,7 +66,7 @@
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Parent Category</label>
                                 <div class="col-sm-10">
-                                <select class="form-control" name="cat_id">
+                                <select class="form-control" name="subcat_id" id="subcat_id">
                                 <option value=0>Select Sub Category</option>
                                
                                 </select>
@@ -94,12 +94,13 @@
                                 <input type="text" name="default_price" class="form-control" id="default_price" required placeholder="Enter Product Name" required value='{{isset($data->default_price)?$data->default_price:''}}'>
                             </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="default_price" class="col-sm-2 col-form-label">Image</label>
-                                <div class="col-sm-10">
-                                <input type="file" name="image_data" class="form-control" id="default_price" required placeholder="Enter Product Name" required>
-                            </div>
-                            </div>
+                              <div class="form-group row">
+                                  <label for="default_price" class="col-sm-2 col-form-label">Image</label>
+                                  <div class="col-sm-10">
+                                  <input type="file" name="image_data" class="form-control" id="default_price" required placeholder="Enter Product Name" required>
+                                  </div>
+                              </div>
+                              
 
                             </div>
 
@@ -126,8 +127,4 @@
 </div>
 
 @endsection
-<script>
-jQuery("#parent_iddd").change(function(){
-    alert("da");
-})
-</script>
+
