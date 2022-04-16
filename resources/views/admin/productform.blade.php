@@ -46,7 +46,7 @@
                             </div>
 
 
-                            <form class="form-horizontal" action ="/savecategory" method="post">
+                            <form class="form-horizontal" action ="/savproduct" method="post" enctype= multipart/form-data>
                             <div class="card-body">
                             @csrf
                             <div class="form-group row">
@@ -56,7 +56,7 @@
                                 <option value=0>Select Category</option>
                                 @if($category)
                                 @foreach($category as $key=>$values)
-                                <option value={{$values->id}} @if(isset($data->parent_id)) @if($data->parent_id==$values->id) selected @endif @endif >{{$values->name}}</option>
+                                <option value={{$values->id}} @if(isset($data->category_id)) @if($data->category_id==$values->id) selected @endif @endif >{{$values->name}}</option>
                                 @endforeach
                                 @endif
                                 </select>
@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Parent Category</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Sub Category</label>
                                 <div class="col-sm-10">
                                 <select class="form-control" name="subcat_id" id="subcat_id">
                                 <option value=0>Select Sub Category</option>
@@ -72,7 +72,7 @@
                                 </select>
                                 </div>
                             </div>
-                            <input type="hidden" name="category_old_id" value={{isset($data->id)?$data->id:""}}>
+                            <input type="hidden" name="product_id_old" value={{isset($data->id)?$data->id:""}}>
                             <div class="form-group row">
                                 <label for="product_name" class="col-sm-2 col-form-label">Product Name</label>
                                 <div class="col-sm-10">
@@ -82,33 +82,52 @@
                             <div class="form-group row">
                                 <label for="product_desc" class="col-sm-2 col-form-label">Product Desc</label>
                                 <div class="col-sm-10">
-                                <textarea name="product_desc" class="form-control" id="product_desc" placeholder="Enter Desc">
-                                    {{isset($data->product_desc)?$data->product_desc:''}}
-                                </textarea>
-                                
-                            </div>
+                                  <textarea name="product_desc" class="form-control" id="product_desc" placeholder="Enter Desc">
+                                      {{isset($data->product_desc)?$data->product_desc:''}}
+                                  </textarea>
+                                  
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <label for="default_price" class="col-sm-2 col-form-label">Default Price</label>
                                 <div class="col-sm-10">
-                                <input type="text" name="default_price" class="form-control" id="default_price" required placeholder="Enter Product Name" required value='{{isset($data->default_price)?$data->default_price:''}}'>
+                                  <input type="text" name="default_price" class="form-control" id="default_price" required placeholder="Enter Product Name" required value='{{isset($data->default_price)?$data->default_price:''}}'>
+                                </div>
                             </div>
-                            </div>
-                              <div class="form-group row">
-                                  <label for="default_price" class="col-sm-2 col-form-label">Image</label>
-                                  <div class="col-sm-10">
-                                  <input type="file" name="image_data" class="form-control" id="default_price" required placeholder="Enter Product Name" required>
-                                  </div>
-                              </div>
-                              
-
+                            <div class="form-group row">
+                                  <label for="Image" class="col-sm-2 col-form-label">Image</label>
+                                <div class="col-sm-10">
+                                  <input type="file" name="Image" class="form-control" id="Image" required  required>
+                                 
+                                </div>
                             </div>
 
+                            <div class="form-group row">
+                                  <label for="default_price" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                  <span class="btn btn-success" id="addvariation">Add Variation</span>
+                                 
+                                </div>
+                            </div>
+                            
+
+                             <div class="form-group row">
+                                  <label for="default_price" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                  <span class="btn btn-success" id="addzipcode">Add Zip Code</span>
+                                 
+                                </div>
+                            </div>
+                            <?php
+                              if(isset($data->subcatgeory_id))
+                              $sub=$data->subcatgeory_id;
+                              else
+                              $sub=0;
+                            ?>
                             <div class="card-footer">
                             <button type="submit" class="btn btn-info">Save</button>
                             <button type="submit" class="btn btn-default float-right"> <a href="/products">Cancel </a></button>
                             </div>
-
                             </form>
                             </div>
               <!-- /.card-body -->
@@ -128,3 +147,6 @@
 
 @endsection
 
+<script>
+var subcategoryid="{{$sub}}";
+</script>

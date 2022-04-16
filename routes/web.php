@@ -55,3 +55,5 @@ Route::group(['middleware' => ['auth']], function () {
  Route::get('productdelete/{id}', '\App\Http\Controllers\ProductsController@productdelete');
  
  Route::post('getsubcategory/', '\App\Http\Controllers\ProductsController@getsubcategory');
+
+ Route::post('savproduct/', '\App\Http\Controllers\ProductsController@savproduct');

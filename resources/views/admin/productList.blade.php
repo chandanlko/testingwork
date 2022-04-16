@@ -66,7 +66,7 @@
                         {{$values->default_price}} 
                       </td>
                       <td>
-                        {{$values->image}}
+                        <img src="{{asset('proimages')}}/{{$values->image}}" height="100px" width="100px">
                       </td>
                       <td>
                         <a class="btn btn-success" href="/productedit/{{$values->id}}"><i class="fa fa-edit"></i></a>
