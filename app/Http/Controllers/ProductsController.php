@@ -6,7 +6,7 @@ use App\Models\Products;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Helpers\ProductHelper;
 use Illuminate\Support\Facades\Redirect;
 
 class ProductsController extends Controller
@@ -82,7 +82,8 @@ class ProductsController extends Controller
      */
     public function savproduct(Request $request)
     {
-        $imageName = time().'.'.$request->Image->extension();  
+        $imageName = time().'.'.$request->Image->extension();
+       
         $request->Image->move(public_path('proimages'), $imageName);
         $data=[
             'product_desc'=>$request->product_desc,
@@ -97,9 +98,9 @@ class ProductsController extends Controller
         if(count($request->material)>0){
             foreach($request->material as $key=>$values){
                 $data=[
-                    'demesion'=>$values,
+                    'demesion'=>$request->dimension[$key],
                     'pack_size'=>$request->pack_size[$key],
-                    'material'=>$request->dimension[$key],
+                    'material'=>$values,
                     'price'=>$request->price[$key],
                     'product_id'=>$id
                 ];
@@ -121,7 +122,54 @@ class ProductsController extends Controller
     public function productedit($id){
         $category=Category::where('status',1)->where('parent_id',0)->get();
         $title="Edit Old Product";
+        $variation=ProductHelper::gettheproductvariation($id);
+        $zipcodes=ProductHelper::zipcodes($id);
         $data=Products::where('id',$id)->first();
-        return view('admin.productform',['title'=>$title,'category'=>$category,'data'=>$data]);
+        return view('admin.productform',['title'=>$title,'category'=>$category,'data'=>$data,'variation'=>$variation,'zipcode'=>$zipcodes]);
+    }
+    public function savediteproduct(Request $request){
+        if(isset($request->Image)){
+           $imageName = time().'.'.$request->Image->extension(); 
+           $request->Image->move(public_path('proimages'), $imageName);  
+        }else{
+            $imageName=$request->old_images;
+        }
+         
+       
+        $data=[
+            'product_desc'=>$request->product_desc,
+            'product_name'=>$request->product_name,
+            'default_price'=>$request->default_price,
+            'status'=>1,
+            'image'=>$imageName,
+            'category_id'=>$request->parent_id,
+            'subcatgeory_id'=>$request->subcat_id
+        ];
+        $id=Products::where('id',$request->product_id_old)->update($data);
+        DB::table('product_variation')->where('product_id',$request->product_id_old)->delete();
+        if(count($request->material)>0){
+            foreach($request->material as $key=>$values){
+                $data=[
+                    'demesion'=>$request->dimension[$key],
+                    'pack_size'=>$request->pack_size[$key],
+                    'material'=>$values,
+                    'price'=>$request->price[$key],
+                    'product_id'=>$request->product_id_old
+                ];
+                DB::table('product_variation')->insert($data);
+            }
+        }
+        DB::table('product_zip')->where('product_id',$request->product_id_old)->delete();
+        if(count($request->zipcode)>0){
+            foreach($request->zipcode as $key=>$values){
+                $data=[
+                    'zipcode'=>$values,
+                    'price'=>$request->deliverycharges[$key],
+                    'product_id'=>$request->product_id_old
+                ];
+            DB::table('product_zip')->insert($data);
+            }
+        }
+        return Redirect::to('products')->with('successmessage',"Product Updated Successfully!"); 
     }
 }

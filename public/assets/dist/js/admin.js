@@ -57,5 +57,5 @@ $(function(){
     setTimeout(selecteddropdown,1000);
     setTimeout(function(){
         $('select[id="subcat_id"]').val(subcategoryid);
-    },1500);
+    },2000);
 });

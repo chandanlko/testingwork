@@ -57,3 +57,5 @@ Route::group(['middleware' => ['auth']], function () {
  Route::post('getsubcategory/', '\App\Http\Controllers\ProductsController@getsubcategory');
 
  Route::post('savproduct/', '\App\Http\Controllers\ProductsController@savproduct');
+
+ Route::post('savediteproduct/', '\App\Http\Controllers\ProductsController@savediteproduct');

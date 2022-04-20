@@ -181,9 +181,17 @@
 
            <li class="nav-item">
             <a href="/products" class="nav-link">
-               <i class="nav-icon far fa-user"></i>
+               <i class="nav-icon fas fa-table"></i>
               <p>
                Products
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/orders" class="nav-link">
+               <i class="nav-icon fas fa-th"></i>
+              <p>
+               Orders
               </p>
             </a>
           </li>
