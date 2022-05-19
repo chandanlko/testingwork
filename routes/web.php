@@ -60,6 +60,4 @@ Route::group(['middleware' => ['auth']], function () {
 
  Route::post('savediteproduct/', '\App\Http\Controllers\ProductsController@savediteproduct');
 
- Route::get('front', function(){
-     return 1;
- });
+ Route::get('front', 'App\Http\Controllers\HomeController@homepage');
