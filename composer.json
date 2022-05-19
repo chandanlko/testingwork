@@ -16,7 +16,6 @@
         "laravel/tinker": "^2.5",
         "meilisearch/meilisearch-php": "^0.20.0",
         "mll-lab/laravel-graphql-playground": "^2.5",
-        "nuwave/lighthouse": "^5.31",
         "tymon/jwt-auth": "^1.0",
         "yajra/laravel-datatables-oracle": "^9.19"
     },
@@ -52,8 +51,7 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "php artisan lighthouse:ide-helper"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

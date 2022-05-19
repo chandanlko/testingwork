@@ -59,3 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
  Route::post('savproduct/', '\App\Http\Controllers\ProductsController@savproduct');
 
  Route::post('savediteproduct/', '\App\Http\Controllers\ProductsController@savediteproduct');
+
+ Route::get('front', function(){
+     return 1;
+ });

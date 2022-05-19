@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+// header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 
  
 
-header("Pragma: no-cache");
+// header("Pragma: no-cache");
 
-ini_set('memory_limit', '-1');
+// ini_set('memory_limit', '-1');
 
 
 
