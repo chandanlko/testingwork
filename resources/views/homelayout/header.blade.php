@@ -9,13 +9,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('frontend/images/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('frontend/images/favicon.ico') }}" type="image/x-icon">
 
-        <link rel="stylesheet" href="css/slick.css" />
-        <link rel="stylesheet" href="css/bootstrap.min.css">           
-        <link rel="stylesheet" href="css/jquery.mmenu.css">     
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}" />
+        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">           
+        <link rel="stylesheet" href="{{ asset('frontend/css/jquery.mmenu.css') }}">     
+        <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
 
 
     </head>
@@ -31,12 +31,12 @@
                <div class="header_Top">
                     <div class="container disflexArea algnflexArea">
                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" alt=""></a>
+                            <a href="/home"><img src="{{ asset('frontend/images/logo.png') }}" alt=""></a>
                        </div> 
                        <div class="formSearch">
                             <form>
                                 <input type="text" name="" placeholder="Search Product">
-                                <button type="submit"><img src="images/search_icon.png" alt=""></button>
+                                <button type="submit"><img src="{{ asset('frontend/images/search_icon.png') }}" alt=""></button>
                             </form>
                        </div>
                        <div class="rightText">
@@ -66,17 +66,17 @@
                             <div class="menuList disflexArea">
                                 <div class="menu">
                                     <ul> 
-                                        <li><a href="#"><img src="images/home.png" alt=""></a></li>                                   
-                                        <li><a href="#">Our Products</a></li>
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">FAQs</a></li>
-                                        <li><a href="#">Contact</a></li>                                    
+                                        <li><a href="#"><img src="{{ asset('frontend/images/home.png') }}" alt=""></a></li>                                   
+                                        <li><a href="/ourproducts">Our Products</a></li>
+                                        <li><a href="/about">About Us</a></li>
+                                        <li><a href="/faq">FAQs</a></li>
+                                        <li><a href="/contact">Contact</a></li>                                    
                                     </ul>
                                 </div>
                                 <div class="login">
                                     <ul>
-                                        <li><a href="#"><img src="images/user_icon.png" alt=""> Login/Signup</a></li>
-                                        <li><a href="#"><img src="images/shopping_cart.png" alt=""> Cart</a></li>
+                                        <li><a href="#"><img src="{{ asset('frontend/images/user_icon.png') }}" alt=""> Login/Signup</a></li>
+                                        <li><a href="#"><img src="{{ asset('frontend/images/shopping_cart.png') }}" alt=""> Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -156,10 +156,10 @@
                         <div class="acceptCard">
                             <h4>We Accept</h4>
                             <ul>
-                                <li><a href="#"><img src="images/card_01.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/card_02.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/card_03.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/card_04.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('frontend/images/card_01.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('frontend/images/card_02.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('frontend/images/card_03.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('frontend/images/card_04.png') }}" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -180,12 +180,12 @@
         </div>
         <!-- END wrapper -->
     
-        <script src="js/3.2.1.min.js"></script>  
-        <script src="js/slick.min.js"></script>  
-        <script src="js/bootstrap.min.js"></script>       
-        <script src="js/jquery.mmenu.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/custom.js"></script>       
+        <script src="{{ asset('frontend/js/3.2.1.min.js') }}"></script>  
+        <script src="{{ asset('frontend/js/slick.min.js') }}"></script>  
+        <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>       
+        <script src="{{ asset('frontend/js/jquery.mmenu.js') }}"></script>
+        <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/custom.js') }}"></script>       
        
       
     </body>

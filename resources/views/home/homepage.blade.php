@@ -1,13 +1,15 @@
 
 @extends('homelayout.header')
 
-@section('title', 'Dashboard')
+@section('title', 'Home Page')
 @section('content')
 
            <!-- START bannerArea -->
            <section class="bannerArea">
             <div class="bannerSlide">
-                <div class="bannetPart" style="background-image: url(images/banner_slide01.png);">
+
+                
+                <div class="bannetPart" style="background-image: url({{ asset('frontend/images/banner_slide01.png') }});">
                     <div class="ovarlay">
                         <div class="container">
                             <div class="bannerContent">
@@ -22,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bannetPart" style="background-image: url(images/banner_slide01.png);">
+                <div class="bannetPart" style="background-image: url({{ asset('frontend/images/banner_slide01.png') }});">
                     <div class="ovarlay">
                         <div class="container">
                             <div class="bannerContent">
@@ -36,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bannetPart" style="background-image: url(images/banner_slide01.png);">
+                <div class="bannetPart" style="background-image: url({{ asset('frontend/images/banner_slide01.png') }});">
                     <div class="ovarlay">
                         <div class="container">
                             <div class="bannerContent">
@@ -66,10 +68,10 @@
                         <div class="item">
                             <div class="disflexArea">
                                 <div class="leftimage">
-                                    <img src="images/subtractionsmallBg.png" alt="">
+                                    <img src="{{ asset('frontend/images/subtractionsmallBg.png') }}" alt="">
                                 </div>
                                 <div class="rightimage">
-                                    <img src="images/shop_img01.png" alt="">
+                                    <img src="{{ asset('frontend/images/shop_img01.png') }}" alt="">
                                 </div>
                             </div>
                             <div class="overlayText">
@@ -85,10 +87,10 @@
                         <div class="item">
                             <div class="disflexArea">
                                 <div class="leftimage">
-                                    <img src="images/subtractionsmallBg.png" alt="">
+                                    <img src="{{ asset('frontend/images/subtractionsmallBg.png') }}" alt="">
                                 </div>
                                 <div class="rightimage">
-                                    <img src="images/shop_img02.png" alt="">
+                                    <img src="{{ asset('frontend/images/shop_img02.png') }}" alt="">
                                 </div>
                             </div>
                             <div class="overlayText">
@@ -104,10 +106,10 @@
                         <div class="item">
                             <div class="disflexArea">
                                 <div class="leftimage">
-                                    <img src="images/subtractionsmallBg.png" alt="">
+                                    <img src="{{ asset('frontend/images/subtractionsmallBg.png') }}" alt="">
                                 </div>
                                 <div class="rightimage">
-                                    <img src="images/shop_img03.png" alt="">
+                                    <img src="{{ asset('frontend/images/shop_img03.png') }}" alt="">
                                 </div>
                             </div>
                             <div class="overlayText">
@@ -126,7 +128,7 @@
             <!-- END shopOnlineArea  -->
 
             <!-- start NewZealandArea -->
-            <section class="newZealandArea" style="background-image: url(./images/subtractionBigBg.png);">
+            <section class="newZealandArea" style="background-image: url({{ asset('frontend/./images/subtractionBigBg.png') }});">
 
                 <!-- START ourDiscoverArea -->
                 <section class="ourDiscoverArea">
@@ -139,12 +141,12 @@
                             </div>
                             <div class="contentBox disflexArea">
                                 <div class="item">
-                                    <img src="images/new_zealand_icon01.png" alt="">
+                                    <img src="{{ asset('frontend/images/new_zealand_icon01.png') }}" alt="">
                                     <h3>New Zealand Manufactured</h3>
                                     <p>Quality you can trust with Australian made products from experienced sign making professionals.</p>
                                 </div>
                                 <div class="item">
-                                    <img src="images/new_zealand_icon02.png" alt="">
+                                    <img src="{{ asset('frontend/images/new_zealand_icon02.png') }}" alt="">
                                     <h3>On Time, On Budget <br> And Beyond Expectations</h3>
                                     <p>We deliver what we promise — premium quality handmade signs that stand the test of time.</p>
                                 </div>
@@ -155,7 +157,7 @@
                 <!-- END ourDiscoverArea -->
 
                 <!-- START ourSignsArea -->
-                <section class="ourSignsArea" style="background-image: url(./images/signsBg.png);"> 
+                <section class="ourSignsArea" style="background-image: url({{ asset('frontend/./images/signsBg.png') }});"> 
                     <div class="overlay">
                         <div class="container">
                             <div class="heading">
@@ -163,22 +165,22 @@
                             </div>
                             <div class="itemBox disflexArea">
                                 <div class="item">
-                                    <a href="#"><img src="images/sings_img01.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('frontend/images/sings_img01.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#"><img src="images/sings_img02.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('frontend/images/sings_img02.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#"><img src="images/sings_img03.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('frontend/images/sings_img03.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#"><img src="images/sings_img04.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('frontend/images/sings_img04.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#"><img src="images/sings_img05.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('frontend/images/sings_img05.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#"><img src="images/sings_img06.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('frontend/images/sings_img06.png') }}" alt=""></a>
                                 </div>
                             </div>
                             <div class="btnGroup">
@@ -194,7 +196,7 @@
                     <div class="container">
                         <div class="cutomBox disflexArea">
                             <div class="image">
-                                <img src="images/custom_img.png" alt="">
+                                <img src="{{ asset('frontend/images/custom_img.png') }}" alt="">
                             </div>
                             <div class="subText">
                                 <h3>Custom Signage</h3>
@@ -210,7 +212,7 @@
             <!-- END NewZealandArea -->
 
              <!-- START newslatterArea -->
-             <section class="newslatterArea" style="background-image: url(./images/newlatterBg.png);">
+             <section class="newslatterArea" style="background-image: url({ asset('./images/newlatterBg.png') }});">
                 <div class="overlay">
                     <div class="container">
                         <div class="latterBox disflexArea">
@@ -232,23 +234,23 @@
             <!-- END newslatterArea -->
 
             <!-- START orderShippingArea -->
-            <section class="orderShippingArea" style="background-image: url(./images/orderBg.png);">
+            <section class="orderShippingArea" style="background-image: url({ asset('frontend/./images/orderBg.png') }});">
                 <div class="container">
                     <div class="itemBox disflexArea">
                         <div class="item">
-                            <img src="images/order_icon01.png" alt="">
+                            <img src="{{ asset('frontend/images/order_icon01.png') }}" alt="">
                             <h3>Free shipping on <br> orders over $50</h3>
                         </div>
                         <div class="item">
-                            <img src="images/order_icon02.png" alt="">
+                            <img src="{{ asset('frontend/images/order_icon02.png') }}" alt="">
                             <h3>Custom-made <br> safety signs</h3>
                         </div>
                         <div class="item">
-                            <img src="images/order_icon03.png" alt="">
+                            <img src="{{ asset('frontend/images/order_icon03.png') }}" alt="">
                             <h3>New Zealand <br> made</h3>
                         </div>
                         <div class="item">
-                            <img src="images/order_icon04.png" alt="">
+                            <img src="{{ asset('frontend/images/order_icon04.png') }}" alt="">
                             <h3>Secure payment</h3>
                         </div>
                     </div>

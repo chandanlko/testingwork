@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,4 +61,9 @@ Route::group(['middleware' => ['auth']], function () {
 
  Route::post('savediteproduct/', '\App\Http\Controllers\ProductsController@savediteproduct');
 
- Route::get('front', 'App\Http\Controllers\HomeController@homepage');
+
+ Route::get('home/', '\App\Http\Controllers\HomeController@homepage');
+ Route::get('ourproducts/', '\App\Http\Controllers\HomeController@ourproducts');
+ Route::get('about/', '\App\Http\Controllers\HomeController@about');
+ Route::get('contact/', '\App\Http\Controllers\HomeController@contact');
+ Route::get('faq/', '\App\Http\Controllers\HomeController@faq');
